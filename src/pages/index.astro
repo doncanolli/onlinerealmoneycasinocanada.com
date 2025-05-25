@@ -46,20 +46,22 @@
 
 			.canada-flag {
 				width: 40px;
-				height: 30px;
-				background: linear-gradient(to right, #ff0000 33%, #ffffff 33%, #ffffff 66%, #ff0000 66%);
-				border-radius: 4px;
-				position: relative;
+				height: 40px;
+				border-radius: 50%;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+				min-width: 40px;
+				min-height: 40px;
 			}
 
-			.canada-flag::after {
-				content: '🍁';
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				font-size: 16px;
-				color: #ff0000;
+			.canada-flag img {
+				width: 40px;
+				height: 40px;
+				object-fit: cover;
+				flex-shrink: 0;
 			}
 
 			h1 {
@@ -67,6 +69,22 @@
 				font-weight: bold;
 				text-align: center;
 				background: linear-gradient(45deg, #ffffff, #ff0000);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			h1 a {
+				text-decoration: none;
+				background: linear-gradient(45deg, #ffffff, #ff0000);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				transition: all 0.3s ease;
+			}
+
+			h1 a:hover {
+				background: linear-gradient(45deg, #ff0000, #ffffff);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -235,6 +253,36 @@
 				color: #cccccc;
 			}
 
+			.footer-nav {
+				margin-bottom: 30px;
+				padding-bottom: 20px;
+				border-bottom: 1px solid #333;
+			}
+
+			.footer-nav a {
+				color: #cccccc;
+				text-decoration: none;
+				margin: 0 20px;
+				padding: 10px 15px;
+				border-radius: 5px;
+				transition: all 0.3s ease;
+				display: inline-block;
+			}
+
+			.footer-nav a:hover {
+				color: #ffffff;
+				background: rgba(255, 0, 0, 0.1);
+				border-color: #ff0000;
+			}
+
+			.footer-info {
+				margin-top: 20px;
+			}
+
+			.footer-info p {
+				margin: 10px 0;
+			}
+
 			.disclaimer {
 				background: rgba(255, 0, 0, 0.1);
 				border: 1px solid #ff0000;
@@ -249,9 +297,235 @@
 				margin-bottom: 10px;
 			}
 
+			/* Additional Content Sections */
+			.info-section, .guide-section, .stats-section, .faq-section {
+				margin: 60px 0;
+			}
+
+			.info-section h2, .guide-section h2, .stats-section h2, .faq-section h2 {
+				text-align: center;
+				font-size: 2rem;
+				color: #ff0000;
+				margin-bottom: 40px;
+			}
+
+			/* Info Cards Grid */
+			.info-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 25px;
+				margin-top: 30px;
+			}
+
+			.info-card {
+				background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+				border-radius: 15px;
+				padding: 25px;
+				text-align: center;
+				border: 2px solid #333;
+				transition: all 0.3s ease;
+			}
+
+			.info-card:hover {
+				transform: translateY(-5px);
+				border-color: #ff0000;
+				box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+			}
+
+			.info-icon {
+				font-size: 3rem;
+				margin-bottom: 15px;
+			}
+
+			.info-card h3 {
+				color: #ffffff;
+				margin-bottom: 15px;
+				font-size: 1.3rem;
+			}
+
+			.info-card p {
+				color: #cccccc;
+				line-height: 1.6;
+			}
+
+			/* Guide Cards */
+			.guide-cards {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.guide-card {
+				display: flex;
+				align-items: center;
+				background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+				border-radius: 15px;
+				padding: 25px;
+				border: 2px solid #333;
+				transition: all 0.3s ease;
+			}
+
+			.guide-card:hover {
+				border-color: #ff0000;
+				transform: translateX(10px);
+			}
+
+			.guide-number {
+				background: #ff0000;
+				color: white;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.5rem;
+				font-weight: bold;
+				margin-right: 25px;
+				flex-shrink: 0;
+			}
+
+			.guide-content h3 {
+				color: #ffffff;
+				margin-bottom: 10px;
+				font-size: 1.3rem;
+			}
+
+			.guide-content p {
+				color: #cccccc;
+				line-height: 1.6;
+			}
+
+			/* Stats Grid */
+			.stats-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 25px;
+				margin-top: 30px;
+			}
+
+			.stat-card {
+				background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+				border-radius: 15px;
+				padding: 30px 20px;
+				text-align: center;
+				border: 2px solid #333;
+				transition: all 0.3s ease;
+			}
+
+			.stat-card:hover {
+				transform: scale(1.05);
+				border-color: #ff0000;
+			}
+
+			.stat-number {
+				font-size: 2.5rem;
+				font-weight: bold;
+				color: #ff0000;
+				margin-bottom: 10px;
+			}
+
+			.stat-label {
+				font-size: 1.1rem;
+				color: #ffffff;
+				font-weight: bold;
+				margin-bottom: 8px;
+			}
+
+			.stat-description {
+				color: #cccccc;
+				font-size: 0.9rem;
+			}
+
+			/* FAQ Section */
+			.faq-container {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.faq-item {
+				background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+				border-radius: 10px;
+				margin-bottom: 15px;
+				border: 2px solid #333;
+				overflow: hidden;
+				transition: all 0.3s ease;
+			}
+
+			.faq-item:hover {
+				border-color: #ff0000;
+			}
+
+			.faq-question {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 20px 25px;
+				cursor: pointer;
+				background: rgba(255, 0, 0, 0.1);
+			}
+
+			.faq-question h3 {
+				color: #ffffff;
+				margin: 0;
+				font-size: 1.1rem;
+			}
+
+			.faq-toggle {
+				color: #ff0000;
+				font-size: 1.5rem;
+				font-weight: bold;
+				transition: transform 0.3s ease;
+			}
+
+			.faq-answer {
+				padding: 0 25px 20px 25px;
+				color: #cccccc;
+				line-height: 1.6;
+			}
+
+			.faq-answer p {
+				margin: 0;
+			}
+
+			/* FAQ Animation States */
+			.faq-answer {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.3s ease, padding 0.3s ease;
+				padding: 0 25px;
+			}
+
+			.faq-item.active .faq-answer {
+				max-height: 200px;
+				padding: 20px 25px;
+			}
+
+			.faq-item.active .faq-toggle {
+				transform: rotate(45deg);
+			}
+
 			@media (max-width: 768px) {
 				h1 {
 					font-size: 2rem;
+				}
+
+				.header-content {
+					gap: 10px;
+				}
+
+				.canada-flag {
+					width: 35px;
+					height: 35px;
+					min-width: 35px;
+					min-height: 35px;
+				}
+
+				.canada-flag img {
+					width: 35px;
+					height: 35px;
 				}
 
 				.casinos-grid {
@@ -261,6 +535,38 @@
 				.casino-card {
 					padding: 20px;
 				}
+
+				.info-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.guide-card {
+					flex-direction: column;
+					text-align: center;
+				}
+
+				.guide-number {
+					margin-right: 0;
+					margin-bottom: 15px;
+				}
+
+				.stats-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.stat-number {
+					font-size: 2rem;
+				}
+
+				.info-section h2, .guide-section h2, .stats-section h2, .faq-section h2 {
+					font-size: 1.5rem;
+				}
+
+				.footer-nav a {
+					margin: 5px 10px;
+					padding: 8px 12px;
+					font-size: 0.9rem;
+				}
 			}
 		</style>
 	</head>
@@ -268,12 +574,16 @@
 		<header>
 			<div class="container">
 				<div class="header-content">
-					<div class="canada-flag"></div>
+					<div class="canada-flag">
+						<img src="/canadaflag.svg" alt="Canadian Flag" />
+					</div>
 					<div>
-						<h1>Best Online Casino Canada Reviews</h1>
+						<h1><a href="/">Best Online Casino Canada Reviews</a></h1>
 						<p class="subtitle">Your trusted guide to the top Canadian online casinos</p>
 					</div>
-					<div class="canada-flag"></div>
+					<div class="canada-flag">
+						<img src="/canadaflag.svg" alt="Canadian Flag" />
+					</div>
 				</div>
 			</div>
 		</header>
@@ -371,17 +681,178 @@
 						<strong>Responsible Gambling Council</strong> or call their helpline.
 					</p>
 				</div>
+
+				<!-- Additional Content Sections -->
+				<section class="info-section">
+					<h2>Why Choose Canadian Online Casinos?</h2>
+					<div class="info-grid">
+						<div class="info-card">
+							<div class="info-icon">🇨🇦</div>
+							<h3>Canadian Licensed</h3>
+							<p>All our recommended casinos are licensed and regulated by Canadian authorities, ensuring fair play and player protection.</p>
+						</div>
+						<div class="info-card">
+							<div class="info-icon">💰</div>
+							<h3>CAD Currency</h3>
+							<p>Play in Canadian dollars without worrying about exchange rates or conversion fees on your deposits and withdrawals.</p>
+						</div>
+						<div class="info-card">
+							<div class="info-icon">🎮</div>
+							<h3>Exclusive Games</h3>
+							<p>Access to games specifically tailored for Canadian players, including local progressive jackpots and themed slots.</p>
+						</div>
+						<div class="info-card">
+							<div class="info-icon">🏦</div>
+							<h3>Local Banking</h3>
+							<p>Support for Canadian banking methods including Interac e-Transfer, major credit cards, and local payment solutions.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="guide-section">
+					<h2>How to Choose the Best Online Casino</h2>
+					<div class="guide-cards">
+						<div class="guide-card">
+							<div class="guide-number">1</div>
+							<div class="guide-content">
+								<h3>Check Licensing</h3>
+								<p>Ensure the casino is licensed by a reputable Canadian gaming authority. Look for licenses from provinces like Ontario, British Columbia, or Quebec.</p>
+							</div>
+						</div>
+						<div class="guide-card">
+							<div class="guide-number">2</div>
+							<div class="guide-content">
+								<h3>Review Game Selection</h3>
+								<p>Look for a diverse portfolio of games including slots, table games, live dealer options, and progressive jackpots from top software providers.</p>
+							</div>
+						</div>
+						<div class="guide-card">
+							<div class="guide-number">3</div>
+							<div class="guide-content">
+								<h3>Examine Bonuses</h3>
+								<p>Compare welcome bonuses, ongoing promotions, and loyalty programs. Pay attention to wagering requirements and terms & conditions.</p>
+							</div>
+						</div>
+						<div class="guide-card">
+							<div class="guide-number">4</div>
+							<div class="guide-content">
+								<h3>Test Customer Support</h3>
+								<p>Reliable 24/7 customer support in English and French is essential. Look for live chat, email, and phone support options.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="stats-section">
+					<h2>Canadian Online Gaming Statistics</h2>
+					<div class="stats-grid">
+						<div class="stat-card">
+							<div class="stat-number">$2.3B</div>
+							<div class="stat-label">Annual Gaming Revenue</div>
+							<div class="stat-description">Total online gaming revenue in Canada</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">68%</div>
+							<div class="stat-label">Mobile Players</div>
+							<div class="stat-description">Canadians who prefer mobile gaming</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">4.2M</div>
+							<div class="stat-label">Active Players</div>
+							<div class="stat-description">Regular online casino players in Canada</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">95%</div>
+							<div class="stat-label">Satisfaction Rate</div>
+							<div class="stat-description">Player satisfaction with licensed casinos</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="faq-section">
+					<h2>Frequently Asked Questions</h2>
+					<div class="faq-container">
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3>Is online gambling legal in Canada?</h3>
+								<span class="faq-toggle">+</span>
+							</div>
+							<div class="faq-answer">
+								<p>Yes, online gambling is legal in Canada. Each province regulates online gambling within its borders, and several provinces operate their own online casinos and sportsbooks.</p>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3>What payment methods are available?</h3>
+								<span class="faq-toggle">+</span>
+							</div>
+							<div class="faq-answer">
+								<p>Canadian players can use Interac e-Transfer, credit/debit cards, PayPal, Skrill, Neteller, and various cryptocurrencies depending on the casino.</p>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3>How long do withdrawals take?</h3>
+								<span class="faq-toggle">+</span>
+							</div>
+							<div class="faq-answer">
+								<p>Withdrawal times vary by method: e-wallets (24-48 hours), Interac e-Transfer (1-3 business days), and bank transfers (3-5 business days).</p>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3>Are casino games fair and random?</h3>
+								<span class="faq-toggle">+</span>
+							</div>
+							<div class="faq-answer">
+								<p>Licensed Canadian casinos use Random Number Generators (RNG) that are regularly tested by independent auditing companies to ensure fair and random outcomes.</p>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 		</main>
 
 		<footer>
 			<div class="container">
 				<div class="footer-content">
-					<p>&copy; 2024 Best Online Casino Canada Reviews. All rights reserved.</p>
-					<p>This website provides information about online casinos available to Canadian residents.</p>
-					<p>Always verify the licensing and legality of online gambling in your province.</p>
+					<nav class="footer-nav">
+						<a href="/">Home</a>
+						<a href="/about">About Us</a>
+						<a href="/privacy-policy">Privacy Policy</a>
+						<a href="/terms-of-service">Terms of Service</a>
+						<a href="/contact">Contact</a>
+					</nav>
+					<div class="footer-info">
+						<p>&copy; 2025 Best Online Casino Canada Reviews. All rights reserved.</p>
+						<p>This website provides information about online casinos available to Canadian residents.</p>
+						<p>Always verify the licensing and legality of online gambling in your province.</p>
+					</div>
 				</div>
 			</div>
 		</footer>
+
+		<script>
+			// FAQ Toggle Functionality
+			document.addEventListener('DOMContentLoaded', function() {
+				const faqItems = document.querySelectorAll('.faq-item');
+				
+				faqItems.forEach(item => {
+					const question = item.querySelector('.faq-question');
+					
+					question.addEventListener('click', function() {
+						// Close all other FAQ items
+						faqItems.forEach(otherItem => {
+							if (otherItem !== item) {
+								otherItem.classList.remove('active');
+							}
+						});
+						
+						// Toggle current item
+						item.classList.toggle('active');
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
