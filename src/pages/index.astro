@@ -1,0 +1,384 @@
+---
+// Homepage for Best Online Casino Canada Reviews
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Best Online Casino Canada Reviews - Top Rated Canadian Casinos 2024</title>
+		<meta name="description" content="Discover the best online casinos in Canada. Expert reviews of Lucky Ones, Lucky Dreams, and JustCasino. Find trusted Canadian gambling sites with the best bonuses and games." />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+				color: #ffffff;
+				line-height: 1.6;
+				min-height: 100vh;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+			header {
+				background: rgba(0, 0, 0, 0.8);
+				padding: 20px 0;
+				border-bottom: 3px solid #ff0000;
+			}
+
+			.header-content {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 15px;
+			}
+
+			.canada-flag {
+				width: 40px;
+				height: 30px;
+				background: linear-gradient(to right, #ff0000 33%, #ffffff 33%, #ffffff 66%, #ff0000 66%);
+				border-radius: 4px;
+				position: relative;
+			}
+
+			.canada-flag::after {
+				content: '🍁';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 16px;
+				color: #ff0000;
+			}
+
+			h1 {
+				font-size: 2.5rem;
+				font-weight: bold;
+				text-align: center;
+				background: linear-gradient(45deg, #ffffff, #ff0000);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.subtitle {
+				text-align: center;
+				font-size: 1.2rem;
+				color: #cccccc;
+				margin-top: 10px;
+			}
+
+			main {
+				padding: 60px 0;
+			}
+
+			.intro {
+				text-align: center;
+				margin-bottom: 60px;
+			}
+
+			.intro h2 {
+				font-size: 2rem;
+				margin-bottom: 20px;
+				color: #ff0000;
+			}
+
+			.intro p {
+				font-size: 1.1rem;
+				color: #cccccc;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.casinos-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 30px;
+				margin-top: 40px;
+			}
+
+			.casino-card {
+				background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+				border-radius: 15px;
+				padding: 30px;
+				border: 2px solid #333;
+				transition: all 0.3s ease;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.casino-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background: linear-gradient(90deg, #ff0000, #ffffff, #ff0000);
+			}
+
+			.casino-card:hover {
+				transform: translateY(-5px);
+				border-color: #ff0000;
+				box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+			}
+
+			.casino-rank {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				background: #ff0000;
+				color: white;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				font-size: 1.2rem;
+			}
+
+			.casino-name {
+				font-size: 1.8rem;
+				font-weight: bold;
+				margin-bottom: 15px;
+				color: #ffffff;
+			}
+
+			.casino-description {
+				color: #cccccc;
+				margin-bottom: 20px;
+				line-height: 1.6;
+			}
+
+			.casino-features {
+				list-style: none;
+				margin-bottom: 25px;
+			}
+
+			.casino-features li {
+				padding: 5px 0;
+				color: #cccccc;
+				position: relative;
+				padding-left: 20px;
+			}
+
+			.casino-features li::before {
+				content: '✓';
+				position: absolute;
+				left: 0;
+				color: #ff0000;
+				font-weight: bold;
+			}
+
+			.casino-button {
+				background: linear-gradient(45deg, #ff0000, #cc0000);
+				color: white;
+				padding: 12px 30px;
+				border: none;
+				border-radius: 25px;
+				font-size: 1rem;
+				font-weight: bold;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-decoration: none;
+				display: inline-block;
+				text-align: center;
+			}
+
+			.casino-button:hover {
+				background: linear-gradient(45deg, #cc0000, #990000);
+				transform: scale(1.05);
+			}
+
+			.rating {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				margin-bottom: 15px;
+			}
+
+			.stars {
+				color: #ffd700;
+				font-size: 1.2rem;
+			}
+
+			.rating-text {
+				color: #cccccc;
+				font-weight: bold;
+			}
+
+			footer {
+				background: rgba(0, 0, 0, 0.9);
+				padding: 40px 0;
+				border-top: 3px solid #ff0000;
+				margin-top: 60px;
+			}
+
+			.footer-content {
+				text-align: center;
+				color: #cccccc;
+			}
+
+			.disclaimer {
+				background: rgba(255, 0, 0, 0.1);
+				border: 1px solid #ff0000;
+				border-radius: 10px;
+				padding: 20px;
+				margin: 40px 0;
+				text-align: center;
+			}
+
+			.disclaimer h3 {
+				color: #ff0000;
+				margin-bottom: 10px;
+			}
+
+			@media (max-width: 768px) {
+				h1 {
+					font-size: 2rem;
+				}
+
+				.casinos-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.casino-card {
+					padding: 20px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="header-content">
+					<div class="canada-flag"></div>
+					<div>
+						<h1>Best Online Casino Canada Reviews</h1>
+						<p class="subtitle">Your trusted guide to the top Canadian online casinos</p>
+					</div>
+					<div class="canada-flag"></div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div class="container">
+				<section class="intro">
+					<h2>Top 3 Best Online Casinos in Canada 2024</h2>
+					<p>
+						Discover the most trusted and exciting online casinos available to Canadian players. 
+						Our expert team has thoroughly reviewed and tested these platforms to bring you the 
+						best gaming experience, security, and bonuses available in Canada.
+					</p>
+				</section>
+
+				<div class="casinos-grid">
+					<!-- Lucky Ones Casino -->
+					<div class="casino-card">
+						<div class="casino-rank">1</div>
+						<h3 class="casino-name">Lucky Ones</h3>
+						<div class="rating">
+							<div class="stars">★★★★★</div>
+							<span class="rating-text">9.8/10</span>
+						</div>
+						<p class="casino-description">
+							Lucky Ones stands out as Canada's premier online casino destination, offering 
+							an exceptional gaming experience with over 2,000 games, lightning-fast payouts, 
+							and unmatched customer service.
+						</p>
+						<ul class="casino-features">
+							<li>Welcome bonus up to $1,500 + 200 free spins</li>
+							<li>Over 2,000 premium games</li>
+							<li>24/7 live chat support in English & French</li>
+							<li>Fast withdrawals (24-48 hours)</li>
+							<li>Licensed and regulated in Canada</li>
+							<li>Mobile-optimized platform</li>
+						</ul>
+						<a href="#" class="casino-button">Play at Lucky Ones</a>
+					</div>
+
+					<!-- Lucky Dreams Casino -->
+					<div class="casino-card">
+						<div class="casino-rank">2</div>
+						<h3 class="casino-name">Lucky Dreams</h3>
+						<div class="rating">
+							<div class="stars">★★★★★</div>
+							<span class="rating-text">9.6/10</span>
+						</div>
+						<p class="casino-description">
+							Lucky Dreams offers an immersive gaming experience with cutting-edge technology, 
+							exclusive Canadian promotions, and a vast selection of slots and live dealer games 
+							that will keep you entertained for hours.
+						</p>
+						<ul class="casino-features">
+							<li>Welcome package up to $1,000 + 100 free spins</li>
+							<li>1,500+ high-quality games</li>
+							<li>Live dealer games with Canadian dealers</li>
+							<li>Weekly cashback bonuses</li>
+							<li>Cryptocurrency payment options</li>
+							<li>VIP loyalty program</li>
+						</ul>
+						<a href="#" class="casino-button">Play at Lucky Dreams</a>
+					</div>
+
+					<!-- JustCasino -->
+					<div class="casino-card">
+						<div class="casino-rank">3</div>
+						<h3 class="casino-name">JustCasino</h3>
+						<div class="rating">
+							<div class="stars">★★★★☆</div>
+							<span class="rating-text">9.4/10</span>
+						</div>
+						<p class="casino-description">
+							JustCasino delivers a straightforward and reliable gaming experience with 
+							competitive bonuses, a solid game selection, and excellent customer support 
+							tailored specifically for Canadian players.
+						</p>
+						<ul class="casino-features">
+							<li>Welcome bonus up to $800 + 150 free spins</li>
+							<li>1,200+ games from top providers</li>
+							<li>Canadian-friendly banking options</li>
+							<li>Regular tournaments and promotions</li>
+							<li>Responsible gambling tools</li>
+							<li>Multi-language support</li>
+						</ul>
+						<a href="#" class="casino-button">Play at JustCasino</a>
+					</div>
+				</div>
+
+				<div class="disclaimer">
+					<h3>⚠️ Responsible Gambling Notice</h3>
+					<p>
+						Gambling can be addictive. Please play responsibly and only gamble with money you can afford to lose. 
+						If you feel you may have a gambling problem, seek help from organizations like 
+						<strong>Responsible Gambling Council</strong> or call their helpline.
+					</p>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<div class="container">
+				<div class="footer-content">
+					<p>&copy; 2024 Best Online Casino Canada Reviews. All rights reserved.</p>
+					<p>This website provides information about online casinos available to Canadian residents.</p>
+					<p>Always verify the licensing and legality of online gambling in your province.</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
