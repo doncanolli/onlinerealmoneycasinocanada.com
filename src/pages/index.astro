@@ -102,10 +102,13 @@
 			}
 
 			.casinos-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				display: flex;
+				flex-direction: column;
 				gap: 30px;
 				margin-top: 40px;
+				max-width: 800px;
+				margin-left: auto;
+				margin-right: auto;
 			}
 
 			.casino-card {
@@ -252,7 +255,7 @@
 				}
 
 				.casinos-grid {
-					grid-template-columns: 1fr;
+					margin-top: 30px;
 				}
 
 				.casino-card {
