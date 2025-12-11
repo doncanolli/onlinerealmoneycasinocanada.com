@@ -1,5 +1,11 @@
 ---
 // Homepage for Best Online Casino Canada Reviews
+const today = new Date();
+const lastUpdated = today.toLocaleDateString('en-CA', { 
+	year: 'numeric', 
+	month: 'long', 
+	day: 'numeric' 
+});
 ---
 
 <html lang="en">
@@ -98,25 +104,7 @@
 			}
 
 			main {
-				padding: 60px 0;
-			}
-
-			.intro {
-				text-align: center;
-				margin-bottom: 60px;
-			}
-
-			.intro h2 {
-				font-size: 2rem;
-				margin-bottom: 20px;
-				color: #ff0000;
-			}
-
-			.intro p {
-				font-size: 1.1rem;
-				color: #cccccc;
-				max-width: 800px;
-				margin: 0 auto;
+				padding: 40px 0 60px 0;
 			}
 
 			.casinos-grid {
@@ -549,6 +537,98 @@
 				transform: rotate(45deg);
 			}
 
+			/* Author Box */
+			.author-box {
+				display: flex;
+				align-items: center;
+				gap: 25px;
+				background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+				border-radius: 15px;
+				padding: 25px 30px;
+				border: 2px solid #333;
+				max-width: 800px;
+				margin: 0 auto 40px auto;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.author-box::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 3px;
+				background: linear-gradient(90deg, #ff0000, #ffffff, #ff0000);
+			}
+
+			.author-avatar {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				overflow: hidden;
+				flex-shrink: 0;
+				border: 3px solid #ff0000;
+				box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+			}
+
+			.author-avatar img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.author-info {
+				flex: 1;
+			}
+
+			.author-label {
+				font-size: 0.85rem;
+				color: #ff0000;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				margin-bottom: 5px;
+				font-weight: 600;
+			}
+
+			.author-name {
+				font-size: 1.4rem;
+				font-weight: bold;
+				color: #ffffff;
+				margin-bottom: 8px;
+			}
+
+			.author-title {
+				font-size: 0.95rem;
+				color: #aaaaaa;
+				margin-bottom: 10px;
+			}
+
+			.author-bio {
+				font-size: 0.9rem;
+				color: #cccccc;
+				line-height: 1.5;
+			}
+
+			.author-updated {
+				display: inline-flex;
+				align-items: center;
+				gap: 6px;
+				margin-top: 12px;
+				font-size: 0.85rem;
+				color: #888888;
+				background: rgba(255, 255, 255, 0.05);
+				padding: 6px 12px;
+				border-radius: 20px;
+				border: 1px solid #444;
+			}
+
+			.author-updated svg {
+				width: 14px;
+				height: 14px;
+				fill: #ff0000;
+			}
+
 			@media (max-width: 768px) {
 				h1 {
 					font-size: 2rem;
@@ -568,6 +648,22 @@
 				.canada-flag img {
 					width: 35px;
 					height: 35px;
+				}
+
+				.author-box {
+					flex-direction: column;
+					text-align: center;
+					padding: 20px;
+					gap: 15px;
+				}
+
+				.author-avatar {
+					width: 70px;
+					height: 70px;
+				}
+
+				.author-name {
+					font-size: 1.2rem;
 				}
 
 				.casinos-grid {
@@ -646,14 +742,21 @@
 
 		<main>
 			<div class="container">
-				<section class="intro">
-					<h2>Top 3 Best Online Casinos in Canada 2025</h2>
-					<p>
-						Discover the most trusted and exciting online casinos available to Canadian players. 
-						Our expert team has thoroughly reviewed and tested these platforms to bring you the 
-						best gaming experience, security, and bonuses available in Canada.
-					</p>
-				</section>
+				<div class="author-box">
+					<div class="author-avatar">
+						<img src="/james.png" alt="James Wilson - Casino Expert" />
+					</div>
+					<div class="author-info">
+						<div class="author-label">Written by</div>
+						<div class="author-name">James Wilson</div>
+						<div class="author-title">Senior Casino Analyst & iGaming Expert</div>
+						<p class="author-bio">With over 12 years of experience in the Canadian gambling industry, James has personally tested and reviewed hundreds of online casinos to bring you the most accurate and trustworthy recommendations.</p>
+						<div class="author-updated">
+							<svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+							Last updated: {lastUpdated}
+						</div>
+					</div>
+				</div>
 
 				<div class="casinos-grid">
 					<!-- Lucky Ones Casino -->
