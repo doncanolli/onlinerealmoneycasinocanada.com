@@ -25,8 +25,8 @@ A modern, responsive static website showcasing the top 3 online casinos availabl
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/doncanolli/bestonlinecasinocanada.reviews.git
-cd bestonlinecasinocanada.reviews
+git clone https://github.com/doncanolli/onlinerealmoneycasinocanada.com.git
+cd onlinerealmoneycasinocanada.com
 ```
 
 2. Install dependencies:
